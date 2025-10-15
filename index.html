@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tendencias en gestión, desarrollo y retención de talento</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+<style>
+body { font-family:'Segoe UI',Arial,sans-serif; background-color:#FFFFFF; color:#595959; margin:0; padding:20px; }
+h1 { color:#B31d15; text-align:center; margin-bottom:30px; }
+h2 { color:#B31d15; border-bottom:2px solid #EFEFEF; padding-bottom:5px; margin-top:40px; }
+.section { margin-bottom:50px; }
+.card { background-color:#EFEFEF; border-radius:12px; padding:18px; margin:15px 0; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+.chart-container { width:90%; max-width:900px; height:300px; margin:0 auto; }
+.analysis { background-color:#FFFFFF; border-left:5px solid #B31d15; padding:12px; margin-top:12px; font-style:italic; font-size:0.95em; }
+.card-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:12px; margin-top:15px; }
+.analysis-card { background-color:#FFFFFF; border-left:5px solid #B31d15; padding:12px; border-radius:10px; box-shadow:0 1px 3px rgba(0,0,0,0.1); font-size:0.9em; }
+.footer { text-align:center; color:#7F7F7F; margin-top:40px; font-size:0.85em; }
+/* Portada */
+.portada { width:100%;height:400px;background:linear-gradient(135deg,#B31d15,#7F7F7F);display:flex;flex-direction:column;justify-content:center;align-items:center;color:#FFFFFF;text-align:center;border-radius:12px;margin-bottom:30px; }
+.portada h1 { font-size:3em; margin:0; }
+.portada p { font-size:1.2em; margin-top:15px; }
+</style>
+</head>
+<body>
+
+<!-- Portada innovadora y limpia -->
+<!-- Portada clara e imprimible -->
+<div style="width:100%;height:400px;background-color:#EFEFEF;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#B31d15;text-align:center;border-radius:12px;margin-bottom:30px;position:relative;overflow:hidden;">
+    <h1 style="font-size:3em;margin:0;font-weight:800;letter-spacing:1px;color:#B31d15;">Tendencias en gestión, desarrollo y retención de talento</h1>
+    <div style="width:120px;height:4px;background-color:#B31d15;margin-top:15px;border-radius:2px;"></div>
+    <p style="font-size:1.3em;margin-top:20px;font-weight:500;color:#595959;">Informe Analítico 2026 | Acrópolis Lab</p>
+
+    <!-- Elementos decorativos sutiles -->
+    <div style="position:absolute;bottom:0;right:10px;width:100px;height:100px;background:rgba(179,29,21,0.1);border-radius:50%;"></div>
+    <div style="position:absolute;top:20px;left:20px;width:80px;height:80px;background:rgba(179,29,21,0.08);border-radius:50%;"></div>
+</div>
+
+
+    <!-- Elementos decorativos sutiles -->
+    <div style="position:absolute;bottom:0;right:10px;width:100px;height:100px;background:rgba(255,255,255,0.1);border-radius:50%;"></div>
+    <div style="position:absolute;top:20px;left:20px;width:80px;height:80px;background:rgba(255,255,255,0.08);border-radius:50%;"></div>
+</div>
+
+<h1>Informe Completo</h1>
+
+<!-- 1. Introducción -->
+<div class="section">
+<h2>Introducción</h2>
+<div class="card">
+<p>Este informe presenta las tendencias clave en gestión, desarrollo y retención de talento hacia 2026, basado en 16 empresas latinoamericanas. Incluye estructura organizacional, prioridades de desarrollo, procesos críticos y desafíos del management.</p>
+</div>
+</div>
+
+<!-- 2. Distribución por rubro -->
+<div class="section">
+<h2>Distribución por rubro, país y cargo</h2>
+<div class="card">
+<div class="chart-container"><canvas id="rubroChart"></canvas></div>
+<div class="analysis"><p>Predominan empresas de Tecnología y Concesionarios, principalmente en Costa Rica. Los cargos son mayormente niveles medios y altos de gestión.</p></div>
+</div>
+</div>
+
+<!-- 3. Cantidad de empleados -->
+<div class="section">
+<h2>Cantidad de empleados por empresa</h2>
+<div class="card">
+<div class="chart-container"><canvas id="empleadosChart"></canvas></div>
+<div class="analysis"><p>La mayoría son empresas medianas (hasta 5.000 empleados). Solo una supera los 10.000.</p></div>
+</div>
+</div>
+
+<!-- 4. Prioridades de desarrollo -->
+<div class="section">
+<h2>Prioridades de desarrollo del talento para 2026</h2>
+<div class="card">
+<div class="chart-container"><canvas id="prioridadesChart"></canvas></div>
+<div class="analysis"><p>Las prioridades son gestión del cambio (68.75%), liderazgo (62.5%) e inteligencia artificial (50%), mostrando la importancia de preparar equipos ante transformaciones y nuevas tecnologías.</p></div>
+</div>
+</div>
+
+<!-- 5. Procesos de gestión -->
+<div class="section">
+<h2>Procesos de gestión con prioridad de cambio o mejora</h2>
+<div class="card">
+<div class="chart-container"><canvas id="procesosChart"></canvas></div>
+<div class="analysis"><p>Los procesos más críticos son retención del talento (62.5%), desarrollo y planes de carrera (50%) y clima organizacional (50%).</p></div>
+</div>
+</div>
+
+<!-- 6. Variables determinantes en selección de proveedores -->
+<div class="section">
+<h2>Variables determinantes en la elección de proveedores de capacitación</h2>
+<div class="card">
+<div class="chart-container"><canvas id="proveedoresChart"></canvas></div>
+<div class="analysis"><p>La trayectoria y experiencia del proveedor, la aplicabilidad de los entregables y las herramientas de medición de impacto son los factores clave. Se prioriza claridad y confiabilidad.</p></div>
+</div>
+</div>
+
+<!-- 7. Dificultades de engagement -->
+<div class="section">
+<h2>Dificultades para generar engagement en los procesos de formación</h2>
+<div class="card">
+<div class="chart-container"><canvas id="engagementChart"></canvas></div>
+<div class="analysis"><p>La principal dificultad es la disponibilidad de tiempo (56.25%), seguida de la motivación y la innovación pedagógica (25%).</p></div>
+</div>
+</div>
+
+<!-- 8. Desafíos del management latinoamericano -->
+<div class="section">
+<h2>Desafíos del management latinoamericano</h2>
+<div class="card card-grid">
+<div class="analysis-card">Adaptabilidad y confianza</div>
+<div class="analysis-card">Cambiar la cultura organizacional según brechas generacionales</div>
+<div class="analysis-card">Equipos híbridos con IA tomando decisiones rápidas y seguras</div>
+<div class="analysis-card">Retención de talento</div>
+<div class="analysis-card">Brechas generacionales</div>
+<div class="analysis-card">Flexibilidad y retorno de inversión</div>
+<div class="analysis-card">Innovación y cambios generacionales</div>
+<div class="analysis-card">Transformación digital y adaptabilidad al cambio</div>
+<div class="analysis-card">Competencias emocionales y uso de IA</div>
+<div class="analysis-card">Gestión del cambio, liderazgo y estrategia</div>
+<div class="analysis-card">Fidelidad del personal y apertura al cambio</div>
+<div class="analysis-card">Adaptación a entornos más dinámicos y cambiantes</div>
+</div>
+<div class="analysis"><p>Los principales desafíos son adaptabilidad, transformación digital, gestión del cambio y brechas generacionales. Los líderes deberán equilibrar tecnología, motivación y propósito humano para gestionar equipos diversos y resilientes.</p></div>
+</div>
+
+<div class="footer">Informe elaborado por Acrópolis Lab © 2026</div>
+
+<script>
+Chart.register(ChartDataLabels);
+
+// Gráfico 1: Rubros (barras horizontales)
+new Chart(document.getElementById('rubroChart'),{
+type:'bar',
+data:{labels:['Tecnología','Concesionario','RRHH/Capital Humano','Consultores','Desarrollo Organizacional','Financiero','Gubernamental'],
+datasets:[{label:'% de empresas',data:[2,2,2,1,1,1,1],backgroundColor:'#B31d15'}]},
+options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false},datalabels:{display:true,color:'#FFFFFF',anchor:'end',align:'right',formatter:v=>v+' empresas'}},scales:{x:{beginAtZero:true},y:{beginAtZero:true}}}
+});
+
+// Gráfico 2: Cantidad de empleados
+new Chart(document.getElementById('empleadosChart'),{
+type:'bar',
+data:{labels:['Hasta 200','201-1000','1001-5000','Más de 10000'],datasets:[{data:[31.25,31.25,31.25,6.25],backgroundColor:'#7F7F7F'}]},
+options:{responsive:true,plugins:{legend:{display:false},datalabels:{display:true,color:'#595959',anchor:'end',align:'top',formatter:v=>v+'%'}},scales:{y:{beginAtZero:true},x:{beginAtZero:true}}}
+});
+
+// Gráfico 3: Prioridades de desarrollo
+new Chart(document.getElementById('prioridadesChart'),{
+type:'bar',
+data:{labels:["Competencias comportamentales","Competencias digitales","Inteligencia artificial","Liderazgo","Gestión del cambio","Habilidades comerciales","Gestión de operaciones","Estrategia","Competencias financieras","Marketing"],
+datasets:[{data:[31.25,31.25,50,62.5,68.75,31.25,12.5,6.25,6.25,6.25],backgroundColor:'#B31d15'}]},
+options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false},datalabels:{display:true,color:'#FFFFFF',anchor:'end',align:'right',formatter:v=>v+'%'}},scales:{x:{beginAtZero:true},y:{beginAtZero:true}}}
+});
+
+// Gráfico 4: Procesos de gestión
+new Chart(document.getElementById('procesosChart'),{
+type:'bar',
+data:{labels:["Retención del talento","Atracción del talento","Desarrollo y planes de carrera","Diagnóstico altos potenciales","Mejora estrategias comerciales","Innovación/proyectos","Arquitectura organizacional","Clima y bienestar","Sustentabilidad","Diversidad e inclusión","Normativa y compliance","Procesos IA"],
+datasets:[{data:[62.5,31.25,50,18.75,25,37.5,18.75,50,18.75,6.25,0,12.5],backgroundColor:'#7F7F7F'}]},
+options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false},datalabels:{display:true,color:'#FFFFFF',anchor:'end',align:'right',formatter:v=>v+'%'}},scales:{x:{beginAtZero:true},y:{beginAtZero:true}}}
+});
+
+// Gráfico 5: Variables proveedor (barras horizontales apiladas)
+new Chart(document.getElementById('proveedoresChart'),{
+type:'bar',
+data:{
+labels:["Acciones seguimiento","Aplicabilidad","Certificaciones","Contenidos custom","Contenidos autogestivos","Ejes temáticos","Flexibilidad países","Flexibilidad duración","Flexibilidad modalidad","Herramientas diagnóstico","Medición impacto","Pedagogía innovadora","Nivel académico","Precio","Trayectoria/experiencia"],
+datasets:[
+{label:'Indistinto',data:[6.25,6.25,43.75,25,31.25,0,43.75,31.25,18.75,31.25,12.5,25,18.75,0,6.25],backgroundColor:'#EFEFEF'},
+{label:'Importante',data:[87.5,81.25,50,62.5,50,100,31.25,62.5,81.25,68.75,81.25,68.75,75,81.25,93.75],backgroundColor:'#7F7F7F'},
+{label:'Excluyente',data:[6.25,12.5,6.25,12.5,18.75,0,25,6.25,0,0,6.25,6.25,6.25,18.75,0],backgroundColor:'#B31d15'}
+]},
+options:{indexAxis:'y',responsive:true,plugins:{datalabels:{display:false}},scales:{x:{beginAtZero:true},y:{beginAtZero:true}}}
+});
+
+// Gráfico 6: Engagement
+new Chart(document.getElementById('engagementChart'),{
+type:'bar',
+data:{labels:["Disponibilidad de tiempo","Falta de interés","Falta innovación","Dificultad necesidades","Otro"],datasets:[{data:[56.25,25,25,25,12.5],backgroundColor:'#B31d15'}]},
+options:{responsive:true,plugins:{legend:{display:false},datalabels:{display:true,color:'#FFFFFF',anchor:'end',align:'top',formatter:v=>v+'%'}},scales:{y:{beginAtZero:true},x:{beginAtZero:true}}}
+});
+</script>
+</body>
+</html>
